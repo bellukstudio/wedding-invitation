@@ -36,14 +36,27 @@ export default function HappyMoment() {
             <div className="relative z-10 px-6 py-16 text-center text-white">
                 <h1 className="text-5xl font-playfair">Moment Bahagia Kami</h1>
 
-                <div className="block max-w-full h-[80px] px-6 py-4 bg-white border border-gray-200 rounded-full shadow-sm hover:bg-gray-100 mt-14 text-center">
-                    <div className="flex justify-center items-center gap-x-6 font-mono text-gray-900 text-md mt-3">
-                        <span>{timeLeft.days} <span className="text-md">Hari</span></span>
-                        <span>{timeLeft.hours} <span className="text-md">Jam</span></span>
-                        <span>{timeLeft.minutes} <span className="text-md">Menit</span></span>
-                        <span>{timeLeft.seconds} <span className="text-md">Detik</span></span>
+                <div className="block w-full max-w-xs mx-auto h-auto px-4 py-3 bg-white border border-gray-200 rounded-full shadow-sm hover:bg-gray-100 mt-10 text-center">
+                    <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 font-mono text-gray-900 text-sm sm:text-md">
+                        <div className="text-center">
+                            <div>{timeLeft.days}</div>
+                            <div className="text-xs sm:text-sm">Hari</div>
+                        </div>
+                        <div className="text-center">
+                            <div>{timeLeft.hours}</div>
+                            <div className="text-xs sm:text-sm">Jam</div>
+                        </div>
+                        <div className="text-center">
+                            <div>{timeLeft.minutes}</div>
+                            <div className="text-xs sm:text-sm">Menit</div>
+                        </div>
+                        <div className="text-center">
+                            <div>{timeLeft.seconds}</div>
+                            <div className="text-xs sm:text-sm">Detik</div>
+                        </div>
                     </div>
                 </div>
+
 
                 <h2 className="text-md font-mono mt-15">Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, insyaAllah kami akan menyelenggarakan acara:</h2>
 
