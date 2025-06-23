@@ -40,8 +40,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 USER nextjs
 
 # Exposed port
-EXPOSE 3003
-ENV PORT=3003
+EXPOSE 3004
+ENV PORT=3004
 ENV HOSTNAME="0.0.0.0"
 
 # Run the nextjs app
