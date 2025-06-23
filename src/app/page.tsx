@@ -1,7 +1,8 @@
 'use client';
-import { useRef, useState } from "react";
-import Landing from "./components/Landing";
+
+import { useRef, useState,Suspense } from "react";
 import Invitation from "./components/Invitation";
+import LandingWrapper from "./components/LandingWrapper";
 
 export default function Home() {
   const [showInvitation, setShowInvitation] = useState(false);
@@ -25,7 +26,11 @@ export default function Home() {
         autoPlay
         loop
       />
-      {!showInvitation && <Landing onFinish={handleStart} />}
+      {!showInvitation && (
+        <Suspense fallback={<div>Loading...</div>}>
+          <LandingWrapper onFinish={handleStart} />
+        </Suspense>
+      )}
       {showInvitation && <Invitation />}
     </>
   );

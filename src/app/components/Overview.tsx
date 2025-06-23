@@ -1,20 +1,12 @@
+'use client'
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
 export default function Overview() {
-    const [recipient, setRecipient] = useState("Teman teman semua");
+    const params = useSearchParams();
+    const to = params.get('to') || 'Teman teman semua';
 
-    const searchParams = useSearchParams();
-
-    useEffect(() => {
-        const to = searchParams.get('to');
-        if (to) {
-            // Decode untuk handle URL encoding seperti spasi jadi %20
-            setRecipient(decodeURIComponent(to));
-        }
-    }, [searchParams]);
     return (
         <div className="text-center w-full space-y-6 bg-cover min-h-screen relative" style={{ backgroundImage: "url('/bg1.png')" }}>
             <div className="absolute h-screen inset-0 bg-black/40"></div>
@@ -61,7 +53,7 @@ export default function Overview() {
                             Kepada Yth Bapak/Ibu/Saudara/i :
                         </p>
                         <p className="text-base md:text-lg font-semibold text-white font-mono">
-                            {recipient}
+                            {to}
                         </p>
                     </div>
 

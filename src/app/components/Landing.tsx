@@ -5,10 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 interface LandingProps {
+    to: string;
     onFinish: () => void;
 }
 
-export default function Landing({ onFinish }: Readonly<LandingProps>) {
+export default function Landing({ onFinish , to}: Readonly<LandingProps>) {
     const [isClicked, setIsClicked] = useState(false);
     const [recipient, setRecipient] = useState("Teman teman semua");
 
@@ -64,7 +65,7 @@ export default function Landing({ onFinish }: Readonly<LandingProps>) {
 
                         <div>
                             <p className="text-md text-gray-600">Kepada Yth Bapak/Ibu/Saudara/i :</p>
-                            <p className="text-xl font-semibold text-gray-800 mt-5 font-mono">{recipient}</p>
+                            <p className="text-xl font-semibold text-gray-800 mt-5 font-mono">{to}</p>
                         </div>
 
                         <button
