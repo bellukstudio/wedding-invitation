@@ -1,0 +1,108 @@
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+
+export default function Overview() {
+    const [recipient, setRecipient] = useState("Teman teman semua");
+
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        const to = searchParams.get('to');
+        if (to) {
+            // Decode untuk handle URL encoding seperti spasi jadi %20
+            setRecipient(decodeURIComponent(to));
+        }
+    }, [searchParams]);
+    return (
+        <div className="text-center w-full space-y-6 bg-cover min-h-screen relative" style={{ backgroundImage: "url('/bg1.png')" }}>
+            <div className="absolute h-screen inset-0 bg-black/40"></div>
+
+            <div className="relative min-h-screen flex flex-col justify-center items-center px-4 py-8">
+                <div className="relative z-10 max-w-4xl w-full">
+                    {/* Header dengan padding top yang cukup */}
+                    <div className="pt-16 pb-8">
+                        <h2 className="text-2xl md:text-4xl font-playfair text-white mb-8">
+                            The Wedding Of
+                        </h2>
+                    </div>
+
+                    {/* Foto mempelai */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1, ease: 'easeIn' }}
+                        viewport={{ once: true }}
+                        className="w-48 h-48 md:w-60 md:h-50 mx-auto rounded-full overflow-hidden shadow-2xl mb-8 border-4 border-white/20"
+                    >
+                        <Image
+                            src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=500&auto=format&fit=crop&q=60"
+                            alt="Foto Mempelai Pria"
+                            width={240}
+                            height={240}
+                            className="object-cover w-full h-full"
+                        />
+                    </motion.div>
+                    {/* Nama mempelai */}
+                    <div className="mb-8">
+                        <h1 className="text-2xl md:text-3xl font-playfair text-white leading-relaxed">
+                            Muh. Lukman Akbar Prihandoyo
+                            <br />
+                            <span className="text-xl md:text-2xl">&</span>
+                            <br />
+                            Masih Mencari - Cari
+                        </h1>
+                    </div>
+
+                    {/* Undangan */}
+                    <div className="mb-8">
+                        <p className="text-sm md:text-md text-white/80 font-mono mb-2">
+                            Kepada Yth Bapak/Ibu/Saudara/i :
+                        </p>
+                        <p className="text-base md:text-lg font-semibold text-white font-mono">
+                            {recipient}
+                        </p>
+                    </div>
+
+                    {/* Button Save the Date */}
+                    <div className="mb-12">
+                        <button className="inline-flex items-center gap-2 px-6 py-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg text-sm font-medium font-mono text-gray-800 hover:bg-white hover:shadow-xl transition-all duration-300">
+                            <svg className="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m11.5 11.5 2.071 1.994M4 10h5m11 0h-1.5M12 7V4M7 7V4m10 3V4m-7 13H8v-2l5.227-5.292a1.46 1.46 0 0 1 2.065 2.065L10 17Zm-5 3h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+                            </svg>
+                            Save the date
+                        </button>
+                    </div>
+
+                    {/* Mouse scroll indicator */}
+                    <div className="flex justify-center items-center">
+                        <div className="w-[30px] h-[50px] border-2 border-white/60 rounded-full flex justify-center items-start relative">
+                            <div className="w-[4px] h-[8px] bg-white/60 rounded-full mt-2 animate-mouse-scroll" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style jsx>{`
+                @keyframes mouse-scroll {
+                    0% {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                    50% {
+                        transform: translateY(12px);
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: translateY(0);
+                        opacity: 0;
+                    }
+                }
+                .animate-mouse-scroll {
+                    animation: mouse-scroll 1.5s infinite ease-in-out;
+                }
+            `}</style>
+        </div>
+    );
+}
