@@ -9,7 +9,7 @@ export default function Closing() {
 
             {/* Content */}
             <div className="relative z-10 px-6 py-16 text-center text-white">
-                <h2 className="text-md w-md place-self-center font-mono mt-15">Terima kasih atas perhatian dan doa restu Anda, yang menjadi kebahagiaan serta kehormatan besar bagi kami.</h2>
+                <h2 className="text-md w-sm md:w-md place-self-center font-mono mt-15">Terima kasih atas perhatian dan doa restu Anda, yang menjadi kebahagiaan serta kehormatan besar bagi kami.</h2>
                 <div className="w-full">
                     <h2 className="text-3xl font-bold mt-10">Wassalamualaikum Warahmatullahi Wabarakatuh</h2>
                 </div>
