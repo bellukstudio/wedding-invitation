@@ -74,7 +74,7 @@ export default function HappyMoment() {
                 <h2 className="text-md font-mono mt-5">Jl. Setia Budi Dukuh Wringin RT 02/05 Kec. Slawi Kab. Tegal</h2>
                 <a href='https://maps.app.goo.gl/4WBdkHDiWw8UrKpb8' target='_blank'
                     className="inline-flex items-center gap-2 px-6 py-2 mt-10 bg-gray-100 rounded-full shadow-lg text-sm font-medium font-mono text-gray-800 hover:shadow-xl transition">
-                    <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z" />
                     </svg>
