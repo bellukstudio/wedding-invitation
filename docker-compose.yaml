@@ -9,3 +9,7 @@ services:
       - 3004:3004
     networks:
       - bellukstudio_network
+
+networks:
+  bellukstudio_network:
+    external: true      
