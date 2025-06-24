@@ -1,0 +1,11 @@
+services:
+  wedding_lukman:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wedding_lukman
+    restart: always
+    ports:
+      - 3004:3004
+    networks:
+      - bellukstudio_network
