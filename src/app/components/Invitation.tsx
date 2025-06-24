@@ -26,7 +26,7 @@ export default function Invitation() {
 
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-[600px_1fr] min-h-screen">
+        <div className="grid grid-cols-1 md:grid-cols-[600px_1fr] min-h-screen max-w-full overflow-hidden">
             {/* Kolom Kiri - Scrollable */}
             <div className="relative bg-gray-100 md:h-screen md:overflow-y-auto scroll-smooth hide-scrollbar">
                 {/* Scrollable content container */}
